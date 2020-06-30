@@ -20,7 +20,8 @@ script:
  - cd ./build
  - git init
  - git add -A
- - git commit -m 'deploy' - git push -f git@github.com:cj620/MyResume.git master:gh-pages
+ - git commit -m 'deploy'
+ - git push -f git@github.com:cj620/MyResume.git master:gh-pages
 deploy:
   provider: pages
   skip-cleanup: true
