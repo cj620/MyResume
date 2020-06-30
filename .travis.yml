@@ -13,19 +13,14 @@
 
 language: node_js
 node_js:
-  - 12
-cache: npm
+  - lts/*
 script:
- - webpack
- - cd ./build
- - git init
- - git add -A
- - git commit -m 'deploy'
- - git push -f git@github.com:cj620/MyResume.git master:gh-pages
+  - npm run build
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: ENV
+  local_dir: /build # 项目打包后生成的文件的目录
+  github-token: ENV # 这里这个变量就是刚才配置 token 时填写的那个变量
   keep-history: true
   on:
-    branch: master
+    branch: master # 项目源码所在的分支
