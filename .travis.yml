@@ -19,7 +19,7 @@ branches:
   only:
     - master # build master branch only
 script:
-  - bash deploy
+  - bash deploy.sh
 deploy:
   provider: pages
   skip-cleanup: true
