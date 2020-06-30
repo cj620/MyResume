@@ -4,12 +4,7 @@ node_js:
 install:
   - npm install
 after_script:
-  - cnpm run build
-  - cd ./build
-  - git init
-  - git add -A
-  - git commit -m '自动化部署'
-  - git push -f git@github.com:cj620/MyResume.git master:gh-pages
+  - bash deploy.sh
 branches:
   only:
     - master
