@@ -1,16 +1,3 @@
-# language: node_js
-# node_js:
-#   - '11'
-# install:
-#   - npm install
-# after_script:
-#   - cnpm run build
-#   - cd ./build
-#   - git init
-#   - git add -A
-#   - git commit -m '自动化部署'
-  # - git push -f git@github.com:cj620/MyResume.git master:gh-pages
-
 language: node_js
 node_js:
   - lts/*
@@ -20,7 +7,7 @@ deploy:
   provider: pages
   skip-cleanup: true
   local_dir: /build # 项目打包后生成的文件的目录
-  github-token: ENV # 这里这个变量就是刚才配置 token 时填写的那个变量
+  github-token: $GITHUB_TOKEN # 这里这个变量就是刚才配置 token 时填写的那个变量
   keep-history: true
   on:
     branch: master # 项目源码所在的分支
