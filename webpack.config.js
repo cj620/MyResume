@@ -32,10 +32,10 @@ module.exports ={
         test:/\.css$/,
         use:[...commonCssLoader]
       },
-      {                        //处理less文件
-        test:/\.less$/,
-        use:[...commonCssLoader,'less-loader']
-      },
+      // {                        //处理less文件
+      //   test:/\.less$/,
+      //   use:[...commonCssLoader,'less-loader']
+      // },
       {
         test:/\.js$/,
         exclude:/node_modules/,
@@ -75,15 +75,29 @@ module.exports ={
       },
 
 
+      {
+        test: /\.ico$/,
+        use: [{
+          loader: 'file-loader', // or file-loader
+          options: {
+            outputPath:'',
+            name:"[name].[ext]"
+          }
+        }]
+      },
+
+
+
       //处理html中的图片
       {
         test:/\.html$/,          
-        loader:'html-loader'    //使用这个loader处理出来的图片使commonJs的规则，但是url-loader使用的是es6格式
+        loader:'html-loader',    //使用这个loader处理出来的图片使commonJs的规则，但是url-loader使用的是es6格式
       },                      //需要修改url-loader的配置
 
       //其他文件的处理
       {
-        exclude:/\.(html|js|css|less|jpg|png|gif)$/,  //排除上面所有的处理过的文件
+        exclude:/\.(html|js|css|less|jpg|png|gif|ico)$/,  //排除上面所有的处理过的文件
+        include:/src/,
         loader:'file-loader',                         //file-loader 会原封不动的处理文件
         options:{
           outputPath:'media'

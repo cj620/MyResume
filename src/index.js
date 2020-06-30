@@ -1,2 +1,2 @@
 import './index.css';
-console.log("----");
+import '../favicon.ico'

@@ -160,12 +160,15 @@
 
     .openSource {}
 
-    .openSource>h2 {}
+    .openSource div {
+      position: relative;
+    }
 
-    .openSource header img {
+    .openSource div>img {
+      width: 50px;
       position: absolute;
-      top: 0;
-      right: 0;
+      right: 40px;
+      margin-top: -5px;
     }
 
     .openSource>ul {}
@@ -180,7 +183,9 @@
       justify-content: space-between;
     }
 
-    .openSource h3 {}
+    .openSource h3 {
+      display: inline-block;
+    }
 
     .jobs {}
 
