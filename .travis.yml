@@ -1,10 +1,29 @@
+# language: node_js
+# node_js:
+#   - '11'
+# install:
+#   - npm install
+# after_script:
+#   - cnpm run build
+#   - cd ./build
+#   - git init
+#   - git add -A
+#   - git commit -m '自动化部署'
+  # - git push -f git@github.com:cj620/MyResume.git master:gh-pages
+
 language: node_js
 node_js:
-  - '11'
-install:
-  - npm install
-after_script:
-  - bash deploy.sh
+  - 12
+cache: npm
 branches:
   only:
-    - master
+    - master # build master branch only
+script:
+  - bash deploy
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: ENV
+  keep-history: true
+  on:
+    branch: master
