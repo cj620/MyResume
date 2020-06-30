@@ -16,11 +16,11 @@ node_js:
   - 12
 cache: npm
 script:
- - cnpm run build
+ - webpack
  - cd ./build
  - git init
  - git add -A
- - git commit -m '自动化部署' - git push -f git@github.com:cj620/MyResume.git master:gh-pages
+ - git commit -m 'deploy' - git push -f git@github.com:cj620/MyResume.git master:gh-pages
 deploy:
   provider: pages
   skip-cleanup: true
