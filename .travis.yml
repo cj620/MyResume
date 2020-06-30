@@ -15,11 +15,12 @@ language: node_js
 node_js:
   - 12
 cache: npm
-branches:
-  only:
-    - master # build master branch only
 script:
-  - bash deploy.sh
+ - cnpm run build
+ - cd ./build
+ - git init
+ - git add -A
+ - git commit -m '自动化部署' - git push -f git@github.com:cj620/MyResume.git master:gh-pages
 deploy:
   provider: pages
   skip-cleanup: true
