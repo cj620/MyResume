@@ -234,6 +234,10 @@
       .projects div>img{
         display: none;
       }
+
+      .openSource div>img{
+        display: none;
+      }
       .bio img {
         display: none;
       }
